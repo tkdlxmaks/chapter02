@@ -6,8 +6,26 @@ public class Song {
 	private String artist;
 	private String album;
 	private String composer;
-	private String year;
+	private int year;
 	private int track;
+
+	public Song() {
+
+	}
+
+	public Song(String title, String artist) {
+		this(title, artist, null, null, 0, 0); // 기본생성자를 호출
+	}
+
+	public Song(String title, String artist, String album, String composer, int year, int track) {
+		super();
+		this.title = title;
+		this.artist = artist;
+		this.album = album;
+		this.composer = composer;
+		this.year = year;
+		this.track = track;
+	}
 
 	public String getTitle() {
 		return title;
@@ -41,11 +59,11 @@ public class Song {
 		this.composer = composer;
 	}
 
-	public String getYear() {
+	public int getYear() {
 		return year;
 	}
 
-	public void setYear(String year) {
+	public void setYear(int year) {
 		this.year = year;
 	}
 

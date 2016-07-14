@@ -12,10 +12,10 @@ public class Goods {
 	private int price;
 	private int countStock;
 	private int countSold;
-	static private int countOfGoods;
+	private static int countOfGoods; // static 변수
 
 	public Goods() {
-
+		countOfGoods++; // 내부에서는 클래스명을 안붙여도 가능하다
 	}
 
 	/***
@@ -24,6 +24,7 @@ public class Goods {
 	public Goods(String name, int price, int countStock, int countSold) {
 		System.out.println("생성자 Goods 호출");
 		// 생성시 초기화
+		countOfGoods++; // 생성시 count 증가
 		this.name = name;
 		this.price = price;
 		this.countStock = countStock;
@@ -41,6 +42,8 @@ public class Goods {
 	}
 
 	public static int getCountOfGoods() {
+		// price = 10; static에서는 는 static만 가능. ex) static 변수만
+		// 에러명 : Cannot make a static reference to the non-static field price
 		return countOfGoods;
 	}
 
